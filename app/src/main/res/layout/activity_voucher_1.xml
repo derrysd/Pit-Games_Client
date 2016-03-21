@@ -6,6 +6,7 @@
     tools:context="xanctuary.transgames_client.Voucher_1"
     >
 
+    
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

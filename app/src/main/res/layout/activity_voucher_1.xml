@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background2"
     tools:context="xanctuary.transgames_client.Voucher_1"
     >
 
-    
+    <!--stepbar-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,6 +22,127 @@
             android:textAppearance="?android:textAppearanceSmall"
             />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/langkah1"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/arrow"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stepbar"
+            android:layout_below="@id/langkah1"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/stepbar1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PILIH VOUCHER DAN PESAN"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_below="@+id/stepbar"
+            android:layout_marginTop="10dp"
+            />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_dialog_alert"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="55dp"
+            android:id="@+id/view" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/jenis"
+            android:layout_below="@+id/view"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:background="@color/text_background"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nominal"
+            android:layout_below="@id/jenis"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/text_background"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/info"
+            android:text="INFO:"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_below="@+id/nominal"
+            android:layout_marginTop="10dp"
+            />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollText"
+            android:layout_below="@+id/info"
+            android:layout_marginTop="10dp"
+            android:padding="15dp"
+            android:background="@color/text_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/infoView"
+                android:text="disini info voucher baljbalbdljabasbdkaj\naksndbd"
+                />
+        </ScrollView>
+
+        <View
+            android:id="@+id/fakeView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tambah"
+            android:id="@+id/Tambah"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_below="@+id/scrollText"
+            android:layout_alignRight="@+id/fakeView"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="5dp"
+            style="@style/ButtonTheme"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selesai"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:id="@+id/selesai"
+            android:layout_below="@+id/scrollText"
+            android:layout_alignLeft="@+id/fakeView"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="5dp"
+            style="@style/ButtonTheme"/>
+
+
+    </RelativeLayout>
 </RelativeLayout>

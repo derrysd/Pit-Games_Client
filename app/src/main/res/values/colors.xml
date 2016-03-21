@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff5252</color>
+    <color name="colorPrimaryDark">#D50000</color>
+    <color name="colorAccent">#D32F2F</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="ripple_color">#c5d32f2f</color>
+    <color name="text_background">#80ffffff</color>
+    <color name="button_color">#ffbe3333</color>
+    <color name="teks_color">#c62828</color>
+</resources>

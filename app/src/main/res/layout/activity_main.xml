@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="xanctuary.transgames_client.MainActivity"
+    android:background="@drawable/background1">
+
+    <FrameLayout
+        android:id="@+id/frameIklan"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="#ff00ffff">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/horizontalScrollView"
+            android:layout_gravity="center"
+            android:fillViewport="false" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/fakeView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"/>
+
+    <ImageButton
+        android:onClick="onVoucherClicked"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnVoucher"
+        android:layout_below="@+id/frameIklan"
+        android:src="@drawable/voucher"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignRight="@+id/fakeView"
+        android:layout_alignParentLeft="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        />
+
+    <ImageButton
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEvent"
+        android:layout_below="@+id/frameIklan"
+        android:src="@drawable/event"
+        android:layout_alignLeft="@+id/fakeView"
+        android:layout_alignParentRight="true"
+        android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="EVENT"
+        android:textAlignment="center"
+        android:layout_marginTop="150dp"
+        android:id="@+id/textEvent"
+        android:layout_below="@+id/frameIklan"
+        android:layout_alignLeft="@+id/fakeView"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/colorAccent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="TICKET"
+        android:textAlignment="center"
+        android:layout_marginTop="150dp"
+        android:id="@+id/textTicket"
+        android:layout_below="@+id/frameIklan"
+        android:layout_alignRight="@+id/fakeView"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/colorAccent"/>
+
+</RelativeLayout>

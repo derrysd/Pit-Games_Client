@@ -18,4 +18,8 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:background">@color/button_color</item>
     </style>
+
+    <style name="spinner_style" parent="AppTheme">
+        <item name="android:background">@drawable/spinner_bg</item>
+    </style>
 </resources>

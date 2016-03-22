@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Transgames-Client</string>
+    <string-array name="entriesJenis">
+        <item>Jenis</item>
+        <item>Data 1</item>
+        <item>Data 2</item>
+        <item>Data 3</item>
+        <item>Data 4</item>
+        <item>Data 5</item>
+    </string-array>
+    <string-array name="entriesNominal">
+        <item>Nominal</item>
+        <item>Data 1</item>
+        <item>Data 2</item>
+        <item>Data 3</item>
+        <item>Data 4</item>
+        <item>Data 5</item>
+    </string-array>
+    <string name="prompt_jenis">Jenis</string>
+    <string name="prompt_nominal">Nominal</string>
 </resources>

@@ -59,7 +59,7 @@ public class SplashActivity2 extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 7000);
+        }, 5000);
 
         //delay untuk teks
         new Handler().postDelayed(new Runnable() {
@@ -67,7 +67,7 @@ public class SplashActivity2 extends AppCompatActivity {
             public void run() {
                 StartAnimations();
             }
-        }, 3000);
+        }, 2000);
 
 
     }

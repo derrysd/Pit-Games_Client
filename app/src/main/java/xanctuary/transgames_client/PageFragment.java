@@ -1,8 +1,5 @@
 package xanctuary.transgames_client;
 
-/**
- * Created by Win 7 on 27/03/2016.
- */
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;

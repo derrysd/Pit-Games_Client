@@ -24,8 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Voucher_2"></activity>
-        <activity android:name=".Voucher_3"></activity>
+        <activity android:name=".Voucher_2"/>
+        <activity android:name=".Voucher_3"/>
     </application>
 
 </manifest>

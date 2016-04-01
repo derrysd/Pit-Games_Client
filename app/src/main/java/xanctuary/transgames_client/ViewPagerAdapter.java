@@ -1,8 +1,5 @@
 package xanctuary.transgames_client;
 
-/**
- * Created by Win 7 on 27/03/2016.
- */
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;

@@ -15,10 +15,6 @@ import android.widget.RelativeLayout;
 
 import static java.lang.System.gc;
 
-/**
- * Created by Win 7 on 21/03/2016.
- */
-
 public class SplashActivity extends AppCompatActivity {
     ImageView imgText;
     AnimationDrawable frameAnimation2;
@@ -42,7 +38,7 @@ public class SplashActivity extends AppCompatActivity {
 
 
         imgText = (ImageView)findViewById(R.id.textLogo);
-        imgText.setBackgroundResource(R.anim.text_animation);
+        imgText.setBackgroundResource(+R.anim.text_animation);
         frameAnimation2 = (AnimationDrawable) imgText.getBackground();
 
         StartAnimations();

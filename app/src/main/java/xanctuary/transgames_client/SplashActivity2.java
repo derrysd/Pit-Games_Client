@@ -11,7 +11,6 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import static java.lang.System.gc;
 
@@ -36,7 +35,7 @@ public class SplashActivity2 extends AppCompatActivity {
         // set its background to our AnimationDrawable XML resource.
 
         imgLogo = (ImageView)findViewById(R.id.ImageViewLogo);
-        imgLogo.setBackgroundResource(R.anim.logo_animation);
+        imgLogo.setBackgroundResource(+R.anim.logo_animation);
 
 
         imgText = (ImageView)findViewById(R.id.ImageViewText);
@@ -93,7 +92,7 @@ public class SplashActivity2 extends AppCompatActivity {
         anim.reset();
         imgText.clearAnimation();
         imgText.startAnimation(anim);
-        imgText.setBackgroundResource(R.anim.text_animation);
+        imgText.setBackgroundResource(+R.anim.text_animation);
         frameAnimation2 = (AnimationDrawable) imgText.getBackground();
 
         new Handler().postDelayed(new Runnable() {

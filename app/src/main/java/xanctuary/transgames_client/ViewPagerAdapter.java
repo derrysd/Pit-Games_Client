@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import java.util.List;
 
-public class ViewPagerAdapter extends FragmentStatePagerAdapter {
+class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     private List<Integer> images;
 

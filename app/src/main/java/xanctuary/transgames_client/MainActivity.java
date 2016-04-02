@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Integer> images;
     private BitmapFactory.Options options;
     private ViewPager viewPager;
-    private View btnNext, btnPrev;
     private FragmentStatePagerAdapter adapter;
     private final static int[] resourceIDs = new int[]{R.drawable.ad1, R.drawable.ad2,
             R.drawable.ad3, R.drawable.ad4, R.drawable.ad5, R.drawable.ad6, R.drawable.ad7, R.drawable.ad8, R.drawable.ad9};
@@ -36,12 +35,6 @@ public class MainActivity extends AppCompatActivity {
         //find view by id
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         dotsLayout = (LinearLayout)findViewById(R.id.container);
-
-        btnNext = findViewById(R.id.next);
-        btnPrev = findViewById(R.id.prev);
-
-        btnPrev.setOnClickListener(onClickListener(0));
-        btnNext.setOnClickListener(onClickListener(1));
 
         setImagesData();
 
@@ -79,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setImagesData() {
-        for (int i = 0; i < resourceIDs.length; i++) {
-            images.add(resourceIDs[i]);
+        for (int resourceID : resourceIDs) {
+            images.add(resourceID);
         }
     }
 

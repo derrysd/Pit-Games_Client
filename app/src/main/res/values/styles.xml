@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -7,29 +6,28 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlHighlight">@color/ripple_color</item>
-        <item name="textColor">@color/teks_color</item>
+        <item name="android:textColor">@color/teks_color</item>
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-
     </style>
 
     <style name="ButtonTheme" parent="AppTheme">
-        <item name="textColor">@android:color/white</item>
-        <item name="background">@color/button_color</item>
-        <item name="textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@color/button_color</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
 
     <style name="SpinnerTheme" parent="AppTheme">
-        <item name="background">@drawable/spinner_bg</item>
+        <item name="android:background">@drawable/spinner_bg</item>
     </style>
 
     <style name="EditTextTheme" parent="AppTheme">
-        <item name="background">@color/text_background</item>
-        <item name="layout_margin">10dp</item>
-        <item name="height">30dp</item>
-        <item name="textAppearance">?android:textAppearanceMedium</item>
-        <item name="textColorHint">@color/teks_color</item>
-        <item name="paddingLeft">10dp</item>
+        <item name="android:background">@color/text_background</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textColorHint">@color/teks_color</item>
+        <item name="android:paddingLeft">10dp</item>
     </style>
 </resources>

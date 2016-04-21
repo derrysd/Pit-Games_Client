@@ -19,6 +19,7 @@ public class SplashActivity2 extends AppCompatActivity {
     AnimationDrawable frameAnimation2;
     ImageView imgLogo;
     ImageView imgText;
+    Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,8 @@ public class SplashActivity2 extends AppCompatActivity {
 
         // Load the ImageView that will host the animation and
         // set its background to our AnimationDrawable XML resource.
+        final LoadResource loadResource = new LoadResource(getApplicationContext());
+        loadResource.execute();
 
         imgLogo = (ImageView)findViewById(R.id.ImageViewLogo);
         imgLogo.setBackgroundResource(+R.anim.logo_animation);
@@ -61,7 +64,8 @@ public class SplashActivity2 extends AppCompatActivity {
         }, 5000);
 
         //delay untuk teks
-        new Handler().postDelayed(new Runnable() {
+        handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 StartAnimations();
@@ -83,6 +87,7 @@ public class SplashActivity2 extends AppCompatActivity {
         frameAnimation1.stop();
         frameAnimation2.stop();
         gc();
+        handler.removeCallbacksAndMessages(null);
     }
 
     private void StartAnimations() {
@@ -95,7 +100,8 @@ public class SplashActivity2 extends AppCompatActivity {
         imgText.setBackgroundResource(+R.anim.text_animation);
         frameAnimation2 = (AnimationDrawable) imgText.getBackground();
 
-        new Handler().postDelayed(new Runnable() {
+        handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 frameAnimation2.start();

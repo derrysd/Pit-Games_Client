@@ -2,6 +2,7 @@ package xanctuary.transgames_client;
 
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.os.Handler;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -11,10 +12,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
     private ArrayList<Integer> images;
-    private BitmapFactory.Options options;
     private ViewPager viewPager;
     private FragmentStatePagerAdapter adapter;
     private final static int[] resourceIDs = new int[]{R.drawable.ad1, R.drawable.ad2,
@@ -24,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
     static ImageView dots[];
     private int dotsCount;
     private LinearLayout dotsLayout;
+    public static Boolean isZoomed = false;
+    private Handler handler;
+    private Runnable runnable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +49,41 @@ public class MainActivity extends AppCompatActivity {
 
         setDots();
 
-        viewPager.addOnPageChangeListener(onFocusChangeListener(adapter.getItemPosition(this)));
+        viewPager.addOnPageChangeListener(onFocusChangeListener(viewPager.getCurrentItem()));
+
+        timerSlide();
+    }
+
+
+    private void timerSlide() {
+        handler = new Handler();
+
+        // Create runnable for posting
+        runnable = new Runnable() {
+            public void run() {
+
+                if (!isZoomed){
+
+                    if (viewPager.getCurrentItem() < viewPager.getAdapter().getCount() - 1) {
+                        viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+                    }
+
+                    else {
+                        viewPager.setCurrentItem(0);
+                    }
+
+                }
+            }
+        };
+
+        int delay = 5000; // delay 1 detik
+        int period = 5000; // ulang setiap 5 detik
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            public void run() {
+                handler.post(runnable);
+            }
+        }, delay, period);
     }
 
     public void onVoucherClicked(View view) {
@@ -52,23 +91,21 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private View.OnClickListener onClickListener(final int i) {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (i > 0) {
-                    //next page
-                    if (viewPager.getCurrentItem() < viewPager.getAdapter().getCount() - 1) {
-                        viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
-                    }
-                } else {
-                    //previous page
-                    if (viewPager.getCurrentItem() > 0) {
-                        viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
-                    }
-                }
-            }
-        };
+    public void onEventClicked(View view) {
+        Intent intent = new Intent(this, Event_1.class);
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        isZoomed= true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        isZoomed = false;
     }
 
     private void setImagesData() {
@@ -85,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
+
     private ViewPager.OnPageChangeListener onFocusChangeListener(final int position) {
         return new ViewPager.OnPageChangeListener() {
             @Override
@@ -120,4 +158,12 @@ public class MainActivity extends AppCompatActivity {
         }
         dots[0].setImageResource(R.drawable.indicator_selected);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacks(runnable);
+    }
+
+
 }

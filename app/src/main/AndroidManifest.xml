@@ -2,29 +2,53 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="xanctuary.transgames_client">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:largeHeap="true"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Voucher_1" />
         <activity
             android:name=".SplashActivity2"
-            android:theme="@style/SplashTheme" />
-        <activity android:name=".StartActivity">
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Voucher_2"/>
-        <activity android:name=".Voucher_3"/>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".StartActivity">
+
+        </activity>
+        <activity
+            android:name=".Voucher_1"
+            android:label="@string/voucher_title" />
+        <activity
+            android:name=".Voucher_2"
+            android:label="@string/voucher_title" />
+        <activity
+            android:name=".Voucher_3"
+            android:label="@string/voucher_title" />
+        <activity
+            android:name=".ZoomImage"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity
+            android:name=".Event_1"
+            android:label="@string/event_title" />
+        <activity
+            android:name=".Event_2"
+            android:label="@string/event_title" />
+        <activity
+            android:name=".Event_3"
+            android:label="@string/event_title" />
+        <activity android:name=".VoucherActivity"/>
     </application>
 
 </manifest>

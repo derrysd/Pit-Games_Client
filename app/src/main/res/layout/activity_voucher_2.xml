@@ -77,25 +77,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nama"
-            style="@style/EditTextTheme" />
+            style="@style/EditTextTheme"
+            android:height="35dp"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nomor Telepon"
-            style="@style/EditTextTheme"/>
+            style="@style/EditTextTheme"
+            android:height="35dp"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
-            style="@style/EditTextTheme"/>
+            style="@style/EditTextTheme"
+            android:height="35dp"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nomor Rekening"
-            style="@style/EditTextTheme"/>
+            style="@style/EditTextTheme"
+            android:height="35dp"/>
     </LinearLayout>
 
     <Button
@@ -106,6 +110,7 @@
         android:text="Selesai"
         android:layout_margin="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:onClick="onBtnVoucher2Click"/>
 
 </RelativeLayout>

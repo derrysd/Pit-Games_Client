@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background2"
-    tools:context="xanctuary.transgames_client.Voucher_3">
+    tools:context="xanctuary.transgames_client.Event_3">
 
     <!--stepbar-->
     <RelativeLayout
@@ -75,20 +75,18 @@
             android:layout_below="@+id/Voucher3_stepbar"
             android:layout_marginTop="10dp"
             />
-
-
     </RelativeLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="OK"
-        android:id="@+id/btnVoucher3"
+        android:id="@+id/btnEvent3"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="74dp"
         style="@style/ButtonTheme"
-        android:onClick="onBtnVoucher3Click"/>
+        android:onClick="onBtnEvent3Click"/>
 
     <TextView
         android:layout_width="wrap_content"

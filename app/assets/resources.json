@@ -1,0 +1,29 @@
+{
+"resource_voucher": [
+	{
+		"nama_voucher": "Lyto",
+		"nominal_voucher": ["10000", "25000", "50000"],
+		"harga_voucher": ["12000", "27000", "52000"]
+	
+	},
+	{
+		"nama_voucher": "Catur Online",
+		"nominal_voucher": ["1000", "5000", "15000"],
+		"harga_voucher": ["3000", "7000", "17000"]
+	}
+	],
+	
+"resource_event": [
+	{
+		"nama_event": "Tawuran Online",
+		"nominal_event": ["10000", "25000", "50000"],
+		"harga_event": ["12000", "27000", "52000"]
+	
+	},
+	{
+		"nama_event": "Perang Bantal",
+		"nominal_event": ["1000", "5000", "15000"],
+		"harga_event": ["3000", "7000", "17000"]
+	}
+	]
+}

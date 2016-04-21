@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background2"
-    tools:context="xanctuary.transgames_client.Voucher_3">
+    tools:context="xanctuary.transgames_client.Event_2">
 
     <!--stepbar-->
     <RelativeLayout
@@ -12,12 +13,13 @@
         android:layout_height="wrap_content"
         android:background="@color/text_background"
         android:padding="20dp"
-        android:id="@+id/Voucher3_relativelay">
+        android:id="@+id/Voucher2_relativelay">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/Voucher3_linearlay">
+            android:id="@+id/Voucher2_linearlay">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -29,75 +31,86 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="20dp"
                 android:src="@drawable/arrow"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/striketrough_text"
                 android:text="LANGKAH 2"
                 android:textAppearance="?android:textAppearanceSmall"
-                android:layout_marginLeft="15dp"
-                />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/arrow"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LANGKAH 3"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="20dp"
                 />
         </LinearLayout>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Voucher3_stepbar"
-            android:layout_below="@id/Voucher3_linearlay"
+            android:id="@+id/stepbar"
+            android:layout_below="@id/Voucher2_linearlay"
             android:layout_marginTop="10dp"
-            android:src="@drawable/stepbar3"
+            android:src="@drawable/stepbar2"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="VALIDASI PEMBAYARAN ANDA"
+            android:text="ISI DATA LENGKAP ANDA"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_below="@+id/Voucher3_stepbar"
+            android:layout_below="@+id/stepbar"
             android:layout_marginTop="10dp"
             />
-
-
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="50dp"
+        android:orientation="vertical"
+        android:layout_below="@id/Voucher2_relativelay"
+        android:layout_centerHorizontal="true"
+
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama"
+            style="@style/EditTextTheme"
+            android:height="35dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nomor Telepon"
+            style="@style/EditTextTheme"
+            android:height="35dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            style="@style/EditTextTheme"
+            android:height="35dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nomor Rekening"
+            style="@style/EditTextTheme"
+            android:height="35dp"/>
+    </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OK"
-        android:id="@+id/btnVoucher3"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="74dp"
+        android:id="@+id/Voucher_btnSelesai"
         style="@style/ButtonTheme"
-        android:onClick="onBtnVoucher3Click"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Validasi Pembayaran anda"
-        android:id="@+id/textView"
-        android:layout_below="@+id/Voucher3_relativelay"
+        android:text="Selesai"
+        android:layout_margin="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp" />
+        android:layout_alignParentBottom="true"
+        android:onClick="onBtnEvent2Click"/>
 
 </RelativeLayout>

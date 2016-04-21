@@ -13,7 +13,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import static java.lang.System.gc;
 
 public class SplashActivity extends AppCompatActivity {
     ImageView imgText;
@@ -36,23 +35,25 @@ public class SplashActivity extends AppCompatActivity {
 
         final Intent intent = new Intent(this, MainActivity.class);
 
+        final LoadResource loadResource = new LoadResource(getApplicationContext());
 
         imgText = (ImageView)findViewById(R.id.textLogo);
         imgText.setBackgroundResource(+R.anim.text_animation);
         frameAnimation2 = (AnimationDrawable) imgText.getBackground();
-
         StartAnimations();
 
         //handler untuk delay next activity selama 5 detik
         //simulasi load data awal
-       new Handler().postDelayed(new Runnable() {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
+                loadResource.execute();
                 startActivity(intent);
                 finish();
             }
         }, 5000);
+
+
     }
 
     private void StartAnimations() {
@@ -76,12 +77,12 @@ public class SplashActivity extends AppCompatActivity {
                 frameAnimation2.start();
             }
         }, 3000);
+
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         frameAnimation2.stop();
-        gc();
     }
 }

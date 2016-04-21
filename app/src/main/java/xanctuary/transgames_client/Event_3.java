@@ -5,16 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class Voucher_2 extends AppCompatActivity {
+public class Event_3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_voucher_2);
+        setContentView(R.layout.activity_event_3);
     }
 
-    public void onBtnVoucher2Click(View view) {
-        Intent a = new Intent(this, Voucher_3.class);
-        startActivity(a);
+    public void onBtnEvent3Click(View view) {
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
     }
 }

@@ -25,8 +25,4 @@ class ViewPagerAdapter extends FragmentStatePagerAdapter {
         return images.size();
     }
 
-    @Override
-    public int getItemPosition(Object object) {
-        return super.getItemPosition(object);
-    }
 }

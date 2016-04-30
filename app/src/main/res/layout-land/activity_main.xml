@@ -5,22 +5,22 @@
     android:layout_height="match_parent"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     tools:context="xanctuary.transgames_client.MainActivity"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:baselineAligned="false">
 
     <com.daimajia.slider.library.SliderLayout
         android:id="@+id/sliderIklan"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         custom:pager_animation="Accordion"
         custom:auto_cycle="true"
         custom:indicator_visibility="visible"
         custom:pager_animation_span="1100"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="3" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_weight="2">
         <Button
@@ -39,5 +39,4 @@
             android:text="Tipe 3"
             android:onClick="onVoucherTipe3"/>
     </LinearLayout>
-
 </LinearLayout>

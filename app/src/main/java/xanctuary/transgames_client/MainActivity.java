@@ -1,168 +1,109 @@
 package xanctuary.transgames_client;
 
 import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.os.Handler;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
+import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
+import com.daimajia.slider.library.Tricks.ViewPagerEx;
 
-public class MainActivity extends AppCompatActivity {
-    private ArrayList<Integer> images;
-    private ViewPager viewPager;
-    private FragmentStatePagerAdapter adapter;
-    private final static int[] resourceIDs = new int[]{R.drawable.ad1, R.drawable.ad2,
-            R.drawable.ad3, R.drawable.ad4, R.drawable.ad5, R.drawable.ad6, R.drawable.ad7, R.drawable.ad8, R.drawable.ad9};
+import java.util.HashMap;
+import java.util.Random;
 
+public class MainActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
 
-    static ImageView dots[];
-    private int dotsCount;
-    private LinearLayout dotsLayout;
-    public static Boolean isZoomed = false;
-    private Handler handler;
-    private Runnable runnable;
+    private SliderLayout mDemoSlider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        images = new ArrayList<>();
+        mDemoSlider = (SliderLayout)findViewById(R.id.sliderIklan);
 
-        //find view by id
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
-        dotsLayout = (LinearLayout)findViewById(R.id.container);
+        HashMap<String,Integer> file_maps = new HashMap<>();
+        file_maps.put("Hannibal",R.drawable.ad1);
+        file_maps.put("Big Bang Theory",R.drawable.ad2);
+        file_maps.put("House of Cards",R.drawable.ad3);
+        file_maps.put("Game of Thrones", R.drawable.ad4);
+        file_maps.put("SI Doel",R.drawable.ad5);
+        file_maps.put("My Little Pony",R.drawable.ad6);
+        file_maps.put("Gang Bang",R.drawable.ad7);
+        file_maps.put("wkkwkwk", R.drawable.ad8);
+        file_maps.put("anu",R.drawable.ad9);
 
-        setImagesData();
+        for(String name : file_maps.keySet()){
+            TextSliderView textSliderView = new TextSliderView(this);
+            // initialize a SliderLayout
+            textSliderView
+                    .description(name)
+                    .image(file_maps.get(name))
+                    .setScaleType(BaseSliderView.ScaleType.Fit)
+                    .setOnSliderClickListener(this);
 
-        // init viewpager adapter and attach
-        adapter = new ViewPagerAdapter(getSupportFragmentManager(), images);
-        viewPager.setAdapter(adapter);
+            //add your extra information
+            textSliderView.bundle(new Bundle());
+            textSliderView.getBundle()
+                    .putString("extra",name);
 
-        setDots();
-
-        viewPager.addOnPageChangeListener(onFocusChangeListener(viewPager.getCurrentItem()));
-
-        timerSlide();
-    }
-
-
-    private void timerSlide() {
-        handler = new Handler();
-
-        // Create runnable for posting
-        runnable = new Runnable() {
-            public void run() {
-
-                if (!isZoomed){
-
-                    if (viewPager.getCurrentItem() < viewPager.getAdapter().getCount() - 1) {
-                        viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
-                    }
-
-                    else {
-                        viewPager.setCurrentItem(0);
-                    }
-
-                }
-            }
-        };
-
-        int delay = 5000; // delay 1 detik
-        int period = 5000; // ulang setiap 5 detik
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-            public void run() {
-                handler.post(runnable);
-            }
-        }, delay, period);
+            mDemoSlider.addSlider(textSliderView);
+        }
+        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+        mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+        mDemoSlider.setCustomAnimation(new DescriptionAnimation());
+        mDemoSlider.setDuration(4000);
+        mDemoSlider.addOnPageChangeListener(this);
     }
 
     public void onVoucherClicked(View view) {
-        Intent intent = new Intent(this, Voucher_1.class);
+        Intent intent = new Intent(this, VoucherActivity2.class);
         startActivity(intent);
     }
 
-    public void onEventClicked(View view) {
-        Intent intent = new Intent(this, Event_1.class);
+    public void onTournamentClicked(View view) {
+        Intent intent = new Intent(this, VoucherActivity.class);
         startActivity(intent);
+    }
+
+    public void onVoucherTipe3(View view) {
+        Intent intent = new Intent(this, VoucherActivity3.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onSliderClick(BaseSliderView slider) {
+        Toast.makeText(this,slider.getBundle().get("extra") + "",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+        String[] trans = {"Default","Accordion", "Background2Foreground","CubeIn", "DepthPage", "Fade",
+                "FlipHorizontal", "FlipPage", "Foreground2Background" , "RotateDown", "RotateUp", "Stack",
+                "Tablet", "ZoomIn", "ZoomOutSlide", "ZoomOut"};
+        int idx = new Random().nextInt(trans.length);
+        mDemoSlider.setPresetTransformer(trans[idx]);
     }
 
     @Override
     protected void onStop() {
+        // To prevent a memory leak on rotation, make sure to call stopAutoCycle() on the slider before activity or fragment is destroyed
+        mDemoSlider.stopAutoCycle();
         super.onStop();
-        isZoomed= true;
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        isZoomed = false;
-    }
-
-    private void setImagesData() {
-        for (int resourceID : resourceIDs) {
-            images.add(resourceID);
-        }
-    }
-
-    private View.OnClickListener onChangePageClickListener(final int i) {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(i);
-            }
-        };
-    }
-
-    private ViewPager.OnPageChangeListener onFocusChangeListener(final int position) {
-        return new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-                for (int i = 0; i < dotsCount; i++) {
-                    dots[i].setImageResource(R.drawable.indicator_unselected);
-                }
-                dots[position].setImageResource(R.drawable.indicator_selected);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        };
-    }
-
-    public void setDots(){
-        dotsCount = images.size();
-        dots = new ImageView[dotsCount];
-        for (int i = 0; i < dotsCount; i++) {
-            dots[i] = new ImageView(this);
-            dots[i].setImageResource(R.drawable.indicator_unselected);
-            dots[i].setOnClickListener(onChangePageClickListener(i));
-            dots[i].setPadding(5, 0, 5, 5);
-            dotsLayout.addView(dots[i]);
-        }
-        dots[0].setImageResource(R.drawable.indicator_selected);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        handler.removeCallbacks(runnable);
     }
 
 

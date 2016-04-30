@@ -1,35 +1,39 @@
 <resources>
     <string name="app_name">Pit Games</string>
     <string name="voucher_title">Voucher</string>
-    <string name="event_title">Event</string>
-    <string-array name="entriesJenis">
-        <item>Jenis</item>
-        <item>Data 1</item>
-        <item>Data 2</item>
-        <item>Data 3</item>
-        <item>Data 4</item>
-        <item>Data 5</item>
-    </string-array>
+    <string name="tournament_title">Tournament</string>
 
-    <string-array name="entriesEvent">
-        <item>JENIS EVENT</item>
-        <item>Seminar Game</item>
-        <item>Lomba Menulis</item>
-        <item>Lomba Menggambar</item>
-        <item>Pameran Game</item>
-        <item>Convention Event</item>
-    </string-array>
+    <string name="voucher">VOUCHER</string>
+    <string name="tournament">TOURNAMENT</string>
 
-    <string-array name="entriesNominal">
-        <item>NOMINAL</item>
-        <item>Data 1</item>
-        <item>Data 2</item>
-        <item>Data 3</item>
-        <item>Data 4</item>
-        <item>Data 5</item>
-    </string-array>
     <string name="prompt_jenis">Jenis</string>
     <string name="prompt_nominal">Nominal</string>
+    <string name="image_button">Image Button</string>
+
+    <string-array name="arrayData">
+        <item>NOMINAL VOUCHER</item>
+    </string-array>
+
+    <string name="table_no">No.</string>
+    <string name="table_barang">Barang</string>
+    <string name="table_Nominal">Nominal</string>
+    <string name="table_harga">Harga</string>
+
+    <string name="btn_tambah">Tambah</string>
+    <string name="frag_cart">Pesan Voucher</string>
+    <string name="frag_isi_data">Isi Data Lengkap Anda</string>
+    <string name="frag_konfirmasi">Konfirmasi Pemesanan Anda</string>
+    <string name="frag_kirim">Silahkan melakukan konfirmasi pemesanan voucher anda dengan
+        mengirim total biaya pemesanan voucher ke nomor rekening XXX-XXXX-XXXXX</string>
+
+    <string name="hint_nama">Nama Lengkap</string>
+    <string name="hint_nomor_telepon">Nomor Telepon</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_nomor_rekening">Nomor Rekening</string>
+    <string name="err_msg_nama">Masukkan Nama Lengkap</string>
+    <string name="err_msg_nomor_telepon">Masukkan Nomor Telepon</string>
+    <string name="err_msg_email">Masukkan Email Aktif</string>
+    <string name="err_msg_nomor_rekening">Masukkan Nomor Rekening</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

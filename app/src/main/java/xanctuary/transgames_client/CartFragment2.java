@@ -48,8 +48,9 @@ public class CartFragment2 extends AbstractStep {
                 final Spinner spinnerJenis, spinnerNominal;
                 final TextView infoHarga, infoStok;
 
-                SharedPreferences sharedPreferences = view.getContext().getSharedPreferences("mPrefs", Context.MODE_PRIVATE);
-                String json  = sharedPreferences.getString("MyJson","");
+//                SharedPreferences sharedPreferences = view.getContext().getSharedPreferences("mPrefs", Context.MODE_PRIVATE);
+//                String json  = sharedPreferences.getString("MyJson","");
+                String json = "[{\"id\":\"7ff4a8b9-e750-43f1-b1b7-e3502e056dc7\",\"title\":\"GEMSCOOL\",\"info\":\"Gemscool Indonesia\",\"available\":\"N\",\"remark\":\"ONTESTING\",\"voucerDetails\":[{\"id\":\"900c7c79-37ee-41dd-b4be-9208b08775af\",\"nominal\":50000,\"price\":52000,\"stock\":50,\"remark\":\"ONTESTING\"},{\"id\":\"cf5f0b9c-9871-4eb6-a8f3-b742925cdcce\",\"nominal\":100000,\"price\":100000,\"stock\":100,\"remark\":\"ONTESTING\"},{\"id\":\"fbbe4e80-dae1-4a28-a6ad-178f5fb0d688\",\"nominal\":20000,\"price\":25000,\"stock\":10,\"remark\":\"ONTESTING\"}]},{\"id\":\"bcd07206-9193-4cd4-acbb-b815c538010b\",\"title\":\"ROG Voucer\",\"info\":\"Republic of Gamer Voucer\",\"available\":\"N\",\"remark\":\"ONTESTING\",\"voucerDetails\":[{\"id\":\"54f4ac47-d6ea-4127-9ee1-ceeb3df9ddbe\",\"nominal\":100000,\"price\":100000,\"stock\":100,\"remark\":\"ONTESTING\"},{\"id\":\"804a4d1c-f733-4f1e-9391-4c6ae579fc3a\",\"nominal\":50000,\"price\":52000,\"stock\":50,\"remark\":\"ONTESTING\"},{\"id\":\"b66c2dd5-207f-41b0-8b82-150a66c859ee\",\"nominal\":20000,\"price\":25000,\"stock\":10,\"remark\":\"ONTESTING\"}]}]";
                 Gson gson = new Gson();
                 final ResourceVoucher[] resourceVoucher = gson.fromJson(json, ResourceVoucher[].class);
                 ArrayList<String> namaVoucher = new ArrayList<>();

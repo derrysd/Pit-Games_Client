@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         file_maps.put("Game of Thrones", R.drawable.ad4);
         file_maps.put("SI Doel",R.drawable.ad5);
         file_maps.put("My Little Pony",R.drawable.ad6);
-        file_maps.put("Gang Bang",R.drawable.ad7);
+        file_maps.put("Contoh",R.drawable.ad7);
         file_maps.put("wkkwkwk", R.drawable.ad8);
         file_maps.put("anu",R.drawable.ad9);
 

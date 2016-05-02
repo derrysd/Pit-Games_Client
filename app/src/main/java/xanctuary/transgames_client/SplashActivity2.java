@@ -34,8 +34,8 @@ public class SplashActivity2 extends AppCompatActivity {
 
         // Load the ImageView that will host the animation and
         // set its background to our AnimationDrawable XML resource.
-        final LoadResource loadResource = new LoadResource(getApplicationContext());
-        loadResource.execute();
+//        final LoadResource loadResource = new LoadResource(getApplicationContext());
+//        loadResource.execute();
 
         imgLogo = (ImageView)findViewById(R.id.ImageViewLogo);
         imgLogo.setBackgroundResource(+R.anim.logo_animation);

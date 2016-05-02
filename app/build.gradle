@@ -49,4 +49,5 @@ dependencies {
     compile 'com.github.fcannizzaro:material-stepper:1.0.8'
     compile 'me.drozdzynski.library.steppers:steppers:0.3.3-SNAPSHOT'
     compile 'ivb.com.materialstepper:material-stepper:0.0.2'
+    compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
 }

@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -38,7 +41,7 @@ public class CartFragment2 extends AbstractStep {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cart2, container, false);
 
-        Button tambah = (Button) view.findViewById(R.id.tambah);
+        FloatingActionButton tambah = (FloatingActionButton) view.findViewById(R.id.tambah);
         tableLayout = (TableLayout) view.findViewById(R.id.table_layout);
 
         tambah.setOnClickListener(new View.OnClickListener() {
@@ -126,7 +129,10 @@ public class CartFragment2 extends AbstractStep {
                             materialDialog.dismiss();
                         }
 
-                        Snackbar.make(view.getRootView(), "Pilih Jenis Voucher & Nominal Voucher", Snackbar.LENGTH_SHORT).show();
+                        Snackbar snackbar = Snackbar.make(view.getRootView(), "Pilih Jenis Voucher & Nominal Voucher", Snackbar.LENGTH_SHORT);
+                        View snackView = snackbar.getView();
+                        snackView.setBackgroundColor(ContextCompat.getColor(view.getContext(),R.color.colorSnackBar));
+                        snackbar.show();
                     }
                 });
 

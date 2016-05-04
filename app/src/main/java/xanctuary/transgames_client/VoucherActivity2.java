@@ -31,7 +31,6 @@ public class VoucherActivity2 extends TabStepper {
         stepList.add(createFragment(new IsiDataFragment2()));
         stepList.add(createFragment(new KonfirmasiFragment2()));
 
-
         addSteps(stepList);
 //        Snackbar.make(this, "null", Snackbar.LENGTH_SHORT).show();
         super.onCreate(savedInstanceState);
@@ -41,6 +40,7 @@ public class VoucherActivity2 extends TabStepper {
         }
 
     }
+
 
 
     private AbstractStep createFragment(AbstractStep fragment) {

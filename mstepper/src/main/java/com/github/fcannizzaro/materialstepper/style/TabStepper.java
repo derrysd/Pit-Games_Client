@@ -1,6 +1,5 @@
 package com.github.fcannizzaro.materialstepper.style;
 
-import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -8,7 +7,6 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.content.ContextCompat;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
@@ -47,11 +45,11 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         this.mLinear = mLinear;
     }
 
-    protected void disabledTouch() {
+    protected void setDisabledTouch() {
         this.disabledTouch = true;
     }
 
-    protected void showPreviousButton() {
+    protected void setPreviousVisible() {
         this.showPrevButton = true;
     }
 
@@ -79,7 +77,7 @@ public class TabStepper extends BasePager implements View.OnClickListener {
 
         mContinue = (Button) findViewById(R.id.continueButton);
         assert mContinue != null;
-        mContinue.setTextColor(ContextCompat.getColor(this, R.color.custom_color));
+        mContinue.setTextColor(primaryColor);
         mContinue.setOnClickListener(this);
 
         mSwitch.setDisplayedChild(0);
@@ -190,8 +188,7 @@ public class TabStepper extends BasePager implements View.OnClickListener {
 
     private void color(View view, boolean selected) {
         Drawable d = view.getBackground();
-        int col = ContextCompat.getColor(view.getContext(), R.color.custom_color);
-        d.setColorFilter(new PorterDuffColorFilter(selected ? col : unselected, PorterDuff.Mode.SRC_ATOP));
+        d.setColorFilter(new PorterDuffColorFilter(selected ? primaryColor : unselected, PorterDuff.Mode.SRC_ATOP));
     }
 
     private void updateScrolling(int newPosition) {
@@ -233,4 +230,15 @@ public class TabStepper extends BasePager implements View.OnClickListener {
         } else
             onError();
     }
+
+    @Deprecated
+    protected void disabledTouch() {
+        this.disabledTouch = true;
+    }
+
+    @Deprecated
+        protected void showPreviousButton() {
+        this.showPrevButton = true;
+    }
+
 }

@@ -6,5 +6,4 @@
     <string name="ms_continue">CONTINUE</string>
     <string name="ms_optional">Optional</string>
     <string name="ms_text_step">Step $current of $total</string>
-
 </resources>

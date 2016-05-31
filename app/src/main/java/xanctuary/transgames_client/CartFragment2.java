@@ -1,7 +1,5 @@
 package xanctuary.transgames_client;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,8 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -127,6 +123,7 @@ public class CartFragment2 extends AbstractStep {
 
                             tableLayout.addView(tableRow,tableLayoutParams);
                             materialDialog.dismiss();
+                            tableLayout.requestFocus();
                         }
 
                         Snackbar snackbar = Snackbar.make(view.getRootView(), "Pilih Jenis Voucher & Nominal Voucher", Snackbar.LENGTH_SHORT);
@@ -191,6 +188,11 @@ public class CartFragment2 extends AbstractStep {
     @Override
     public boolean isOptional() {
         return false;
+    }
+
+    @Override
+    public void onPrevious() {
+
     }
 
     @Override

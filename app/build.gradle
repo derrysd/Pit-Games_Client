@@ -10,13 +10,13 @@ android {
 
     defaultConfig {
         applicationId "xanctuary.transgames_client"
-        minSdkVersion 16
+        minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-        renderscriptTargetApi 19
+        renderscriptTargetApi 20
         renderscriptSupportModeEnabled true
-        vectorDrawables.useSupportLibrary = true
+//        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -26,31 +26,50 @@ android {
     }
 }
 
+
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
 
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:cardview-v7:23.4.0'
+
     compile('com.github.afollestad.material-dialogs:core:0.8.5.8@aar') {
         transitive = true
-    }
+    } //material dialog > mau diganti blur
 
     compile('com.github.afollestad.material-dialogs:commons:0.8.5.8@aar') {
         transitive = true
-    }
+    } //material dialog > mau diganti blur
 
-    compile project(':mstepper')
-    compile 'com.android.support:appcompat-v7:23.3.0'
-    compile 'com.android.support:design:23.3.0'
-    compile 'com.android.support:support-v4:23.3.0'
-    compile 'com.google.code.gson:gson:2.6.2'
-    compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.nineoldandroids:library:2.4.0'
-    compile 'com.daimajia.slider:library:1.1.5@aar'
-    compile 'com.github.ViksaaSkool:AwesomeSplash:v1.0.0'
-    compile 'com.daimajia.easing:library:1.0.1@aar'
-    compile 'com.daimajia.androidanimations:library:1.1.3@aar'
-    compile 'me.drozdzynski.library.steppers:steppers:0.3.3-SNAPSHOT'
-    compile 'ivb.com.materialstepper:material-stepper:0.0.2'
-    compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
-    compile 'com.github.manuelpeinado.glassactionbar:glassactionbar:0.3.0'
+    compile('com.github.ozodrukh:CircularReveal:1.3.1@aar') {
+        transitive = true;
+    } //splashscreen
+    compile 'com.eftimoff:android-pathview:1.0.8@aar' //splashscreen
+    compile 'com.romainpiel.shimmer:library:1.4.0@aar' //splashscreen
+
+    compile 'com.google.code.gson:gson:2.6.2' //JSON
+
+    compile project(':mstepper') //stepper
+
+    compile 'com.nineoldandroids:library:2.4.0' //9+
+    compile 'com.daimajia.easing:library:1.0.1@aar' //animasi
+    compile 'com.daimajia.androidanimations:library:1.1.3@aar'//animasi
+
+    compile 'com.squareup.picasso:picasso:2.3.2' //slider
+    compile 'com.daimajia.slider:library:1.1.5@aar' //slider
+
+//    compile 'com.github.traex.rippleeffect:library:1.3'
+//    compile 'com.balysv:material-ripple:1.0.2'
+//    compile 'com.github.devlight.pulseview:library:1.0.1'
+
+    compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT' //ORM
+
+    compile 'com.github.devlight.shadowlayout:library:1.0.1' //shadow-glow
+    compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar' //aniasi viewpager fragment
+
+    compile 'com.balysv:material-ripple:1.0.2' //ripple
+    compile 'com.github.fcannizzaro:fast-event:0.1.3' //eventbus
 }

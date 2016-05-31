@@ -4,6 +4,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
+import com.github.fcannizzaro.materialstepper.interfaces.Pageable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
  * @author Francesco Cannizzaro (fcannizzaro).
  */
 
-public class PageAdapter extends FragmentPagerAdapter {
+public class PageAdapter extends FragmentPagerAdapter implements Pageable {
 
     private ArrayList<AbstractStep> fragments = new ArrayList<>();
 
@@ -20,11 +21,13 @@ public class PageAdapter extends FragmentPagerAdapter {
         super(fm);
     }
 
+    @Override
     public void add(AbstractStep fragment) {
         fragments.add(fragment);
         notifyDataSetChanged();
     }
 
+    @Override
     public void set(List<AbstractStep> fragments) {
         this.fragments.clear();
         this.fragments.addAll(fragments);

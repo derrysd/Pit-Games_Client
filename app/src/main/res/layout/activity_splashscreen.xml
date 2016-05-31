@@ -1,47 +1,81 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<io.codetail.widget.RevealFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/white"
-    tools:context=".SplashScreen"
-    android:weightSum="1">
+    tools:context="xanctuary.transgames_client.SplashActivity">
 
-    <RelativeLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_alignParentTop="true"
-        android:id="@+id/rel_lay"
-        >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/logo"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/logo"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:orientation="vertical"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/rel_lay"
-        android:id="@+id/rel_lay2"
-        android:layout_marginTop="20dp"
-        >
+        android:id="@+id/reveal"
+        android:orientation="vertical"
+        android:background="@drawable/blur">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5">
+            <com.eftimoff.androipathview.PathView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_centerInParent="true"
+                android:id="@+id/pathView"
+                app:pathColor="@android:color/white"
+                app:pathWidth="1dp"
+                app:svg="@raw/logo"/>
+        </RelativeLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textLogo"
-            android:layout_centerHorizontal="true"/>
-    </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingRight="30dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.romainpiel.shimmer.ShimmerTextView
+                    android:id="@+id/teksLogoTengah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-games"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#9d00ff"/>
+                <com.romainpiel.shimmer.ShimmerTextView
+                    android:id="@+id/teksLogokanan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/teksLogoTengah"
+                    android:text=".com"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="#0ec21d"/>
+                <com.romainpiel.shimmer.ShimmerTextView
+                    android:id="@+id/teksLogokiri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pit"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_toLeftOf="@id/teksLogoTengah"
+                    android:textColor="#0044ff"/>
+            </RelativeLayout>
 
-</RelativeLayout>
+            <TextView
+                android:paddingLeft="30dp"
+                android:id="@+id/tagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="a new era indonesian gamers"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#0088ff"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</io.codetail.widget.RevealFrameLayout>

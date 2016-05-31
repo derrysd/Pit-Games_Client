@@ -11,6 +11,10 @@ public interface Nextable {
 
     void onStepVisible();
 
+    void onNext();
+
+    void onPrevious();
+
     String optional();
 
     String error();

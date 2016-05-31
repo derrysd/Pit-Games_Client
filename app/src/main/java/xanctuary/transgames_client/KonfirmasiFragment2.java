@@ -20,6 +20,7 @@ public class KonfirmasiFragment2 extends AbstractStep {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_konfirmasi2, container, false);
     }
 
@@ -31,6 +32,11 @@ public class KonfirmasiFragment2 extends AbstractStep {
     @Override
     public boolean isOptional() {
         return false;
+    }
+
+    @Override
+    public void onPrevious() {
+
     }
 
     @Override

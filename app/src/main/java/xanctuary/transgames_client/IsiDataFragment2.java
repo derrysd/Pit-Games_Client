@@ -10,10 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.github.fcannizzaro.fastevent.EventCallback;
+import com.github.fcannizzaro.fastevent.FastEvent;
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 
 public class IsiDataFragment2 extends AbstractStep {
@@ -44,6 +45,15 @@ public class IsiDataFragment2 extends AbstractStep {
         inputNomorTelp.addTextChangedListener(new MyTextWatcher(inputNomorTelp));
         inputEmail.addTextChangedListener(new MyTextWatcher(inputEmail));
         inputNomorRek.addTextChangedListener(new MyTextWatcher(inputNomorRek));
+
+        FastEvent.on("isiDataFragment")
+                .onUi(getActivity())
+                .execute(new EventCallback() {
+                    @Override
+                    public void onEvent(Object... objects) {
+                        FastEvent.emit("in-activity", nextIf(), error());
+                    }
+                });
 
         return view;
     }
@@ -125,7 +135,7 @@ public class IsiDataFragment2 extends AbstractStep {
 
     private void requestFocus(View view) {
         if (view.requestFocus()) {
-            getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+            getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         }
     }
 
@@ -169,6 +179,11 @@ public class IsiDataFragment2 extends AbstractStep {
     @Override
     public boolean isOptional() {
         return false;
+    }
+
+    @Override
+    public void onPrevious() {
+
     }
 
     @Override

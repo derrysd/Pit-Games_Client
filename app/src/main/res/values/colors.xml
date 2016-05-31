@@ -4,10 +4,18 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#b71c1c</color>t
     <color name="colorTint">#9d00ff</color>
+    <color name="colorBackground">#000000</color>
 
-    <color name="textColor">#FFFFFF</color>
+    <color name="textColor">#7bffffff</color>
     <color name="colorStepper">#9e9e9e</color>
-    <color name="colorLogo">#ffffff</color>
+    <color name="colorLogo">#7bffffff</color>
     <color name="colorSnackBar">#F44336</color>
+
+    <color name="indicator_selected">#ff0000</color>
+    <color name="indicator_unselected">#93beff</color>
+
+    <color name="titleStripColorUnselected">#757575</color>
+    <color name="titleStripColorSelected">#fff</color>
+    <color name="shadowStripColor">#fff</color>
 
 </resources>

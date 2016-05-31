@@ -1,13 +1,14 @@
 package com.github.fcannizzaro.materialstepper.style;
 
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.MotionEvent;
-import android.view.View;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.R;
 import com.github.fcannizzaro.materialstepper.adapter.PageAdapter;
 import com.github.fcannizzaro.materialstepper.adapter.PageChangeAdapter;
+import com.github.fcannizzaro.materialstepper.adapter.PageStateAdapter;
+import com.github.fcannizzaro.materialstepper.interfaces.Pageable;
 
 import java.util.List;
 
@@ -20,18 +21,12 @@ public class BasePager extends BaseStyle {
     protected ViewPager mPager;
 
     // adapters
-    protected PageAdapter mPagerAdapter;
+    protected Pageable mPagerAdapter;
 
     protected void init() {
         mPager = (ViewPager) findViewById(R.id.stepPager);
         assert mPager != null;
-        mPager.setAdapter(mPagerAdapter);
-        mPager.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                return true;
-            }
-        });
+        mPager.setAdapter((PagerAdapter) mPagerAdapter);
         mSteps.get(0).onStepVisible();
         mPager.addOnPageChangeListener(new PageChangeAdapter() {
             @Override
@@ -43,7 +38,7 @@ public class BasePager extends BaseStyle {
 
     private void initAdapter() {
         if (mPagerAdapter == null)
-            mPagerAdapter = new PageAdapter(getSupportFragmentManager());
+            mPagerAdapter = getStateAdapter() ? new PageStateAdapter(getSupportFragmentManager()) : new PageAdapter(getSupportFragmentManager());
     }
 
     @Override

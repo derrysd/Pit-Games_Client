@@ -68,11 +68,11 @@
 
     <View
         android:id="@+id/divider"
-        android:layout_width="56dp"
+        android:layout_width="26dp"
         android:layout_height="1dp"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
         android:layout_toEndOf="@+id/container_txt"
         android:layout_toRightOf="@+id/container_txt"
         android:background="#bdbdbd" />

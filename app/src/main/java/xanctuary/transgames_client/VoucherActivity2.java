@@ -19,11 +19,9 @@ public class VoucherActivity2 extends TabStepper {
 
         setErrorTimeout(1500);
         setLinear(linear);
-//        setTitle("Tab Stepper <small>(" + (linear ? "" : "Non ") + "Linear)</small>");
         setTitle("VOUCHER");
-        showPreviousButton();
-        disabledTouch();
-
+        setDisabledTouch();
+        setPreviousVisible();
 
         List<AbstractStep> stepList = new ArrayList<>();
 
@@ -32,12 +30,7 @@ public class VoucherActivity2 extends TabStepper {
         stepList.add(createFragment(new KonfirmasiFragment2()));
 
         addSteps(stepList);
-//        Snackbar.make(this, "null", Snackbar.LENGTH_SHORT).show();
         super.onCreate(savedInstanceState);
-
-        if (savedInstanceState!=null){
-            mSteps.current(savedInstanceState.getInt("pos"));
-        }
 
     }
 
@@ -52,7 +45,7 @@ public class VoucherActivity2 extends TabStepper {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putInt("pos", mSteps.current());
+        
     }
 
     @Override
@@ -65,11 +58,12 @@ public class VoucherActivity2 extends TabStepper {
 
     @Override
     public void onPrevious() {
-        if (mSteps.current() > 1) {
-           onError();
-        } else {
-            super.onPrevious();
-        }
+//        if (mSteps.current() > 1) {
+//           onError();
+//        } else {
+//            super.onPrevious();
+//        }
+        super.onPrevious();
     }
 
 }

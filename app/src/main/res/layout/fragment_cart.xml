@@ -1,98 +1,92 @@
-<LinearLayout
+<LinearLayout xmlns:blur="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:context=".CartFragment2"
     android:orientation="vertical"
-    android:layout_gravity="center_horizontal">
+    android:layout_gravity="center_horizontal"
+    android:background="@android:color/transparent">
 
-    <android.support.v7.widget.CardView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="@dimen/activity_horizontal_margin">
+        android:orientation="vertical"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:background="@drawable/layout_bg">
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/frag_cart"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/colorLogo"
+            android:textStyle="bold"
+            android:background="@android:color/transparent"/>
+
+        <TableLayout
+            android:id="@+id/table_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="*"
+            android:stretchColumns="*"
             android:orientation="vertical"
-            android:layout_margin="@dimen/activity_horizontal_margin">
-
-            <TextView
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@color/colorAccent">
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/frag_cart"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:layout_marginBottom="20dp"/>
-
-            <TableLayout
-                android:id="@+id/table_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:shrinkColumns="*"
-                android:stretchColumns="*"
-                android:orientation="vertical"
+                android:layout_height="match_parent"
                 android:gravity="center"
-                android:padding="5dp"
-                android:background="@color/colorAccent">
+                android:orientation="vertical"
+                android:layout_marginBottom="2dp">
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/table_no"
+                    android:layout_column="0"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_marginBottom="2dp">
+                    android:textColor="@color/textColor"
+                    />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/table_no"
-                        android:layout_column="0"
-                        android:gravity="center"
-                        android:textColor="@color/textColor"
-                        />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/table_barang"
+                    android:layout_column="1"
+                    android:gravity="center"
+                    android:textColor="@color/textColor"
+                    />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/table_barang"
-                        android:layout_column="1"
-                        android:gravity="center"
-                        android:textColor="@color/textColor"
-                        />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/table_Nominal"
+                    android:layout_column="2"
+                    android:gravity="center"
+                    android:textColor="@color/textColor"
+                    />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/table_Nominal"
-                        android:layout_column="2"
-                        android:gravity="center"
-                        android:textColor="@color/textColor"
-                        />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/table_harga"
+                    android:layout_column="3"
+                    android:gravity="center"
+                    android:textColor="@color/textColor"
+                    />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/table_harga"
-                        android:layout_column="3"
-                        android:gravity="center"
-                        android:textColor="@color/textColor"
-                        />
-                </TableRow>
-            </TableLayout>
-
-        </LinearLayout>
-
-
-    </android.support.v7.widget.CardView>
-
-    <Button
+    <android.support.design.widget.FloatingActionButton
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tambah"
-        android:text="@string/btn_tambah"/>
-
+        blur:srcCompat="@drawable/add_cart"/>
 </LinearLayout>

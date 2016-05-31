@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:blur="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bcg"
+    android:background="@drawable/blur"
     android:orientation="vertical">
 
     <LinearLayout
@@ -13,12 +11,11 @@
         android:layout_above="@+id/stepSwitcher"
         android:orientation="vertical">
 
-        <android.support.v7.widget.CardView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize"
-            card_view:cardBackgroundColor="@android:color/transparent"
-            card_view:cardCornerRadius="0dp">
+            android:background="@drawable/layout_bg">
 
             <HorizontalScrollView
                 android:id="@+id/steps"
@@ -26,27 +23,24 @@
                 android:layout_height="wrap_content"
                 android:minHeight="72dp"
                 android:scrollbars="none"
-                android:background="@android:color/transparent">
+                android:fillViewport="false">
 
-                <com.github.fcannizzaro.materialstepper.BlurLinearLayout
+                <LinearLayout
                     android:id="@+id/stepTabs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingLeft="12dp"
-                    android:paddingRight="12dp"
-                    android:background="#44ffffff"
-                    blur:radius="15dp"/>
+                    android:paddingRight="12dp" />
 
             </HorizontalScrollView>
 
-        </android.support.v7.widget.CardView>
+        </RelativeLayout>
 
-        <android.support.v4.view.ViewPager
+        <com.github.fcannizzaro.materialstepper.widget.LockedViewPager
             android:id="@+id/stepPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"/>
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
@@ -55,14 +49,13 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentBottom="true"
-        android:background="@android:color/transparent">
+        android:background="@drawable/layout_bg">
 
-        <com.github.fcannizzaro.materialstepper.BlurRelativeLayout
+        <RelativeLayout
             android:id="@+id/stepNavigation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#44ffffff"
-            blur:radius="15dp">
+            android:background="@android:color/transparent">
 
             <TextView
                 android:id="@+id/stepPrev"
@@ -88,7 +81,7 @@
                 android:textSize="@dimen/material_stepper_bottombar_font"
                 android:textStyle="bold" />
 
-        </com.github.fcannizzaro.materialstepper.BlurRelativeLayout>
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/stepError"

@@ -40,6 +40,11 @@ public class StepSample extends AbstractStep {
     }
 
     @Override
+    public void onPrevious() {
+
+    }
+
+    @Override
     public String name() {
         return "Tab " + getArguments().getInt("position", 0);
     }

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
     tools:context="xanctuary.transgames_client.MainActivity"
     android:orientation="horizontal"
+    android:background="@drawable/blur"
     android:baselineAligned="false">
 
     <com.daimajia.slider.library.SliderLayout
@@ -16,27 +18,58 @@
         custom:indicator_visibility="visible"
         custom:pager_animation_span="1100"
         android:layout_height="match_parent"
-        android:layout_weight="3" />
+        android:layout_weight="4" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/indicator_selected" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_weight="2"
         android:orientation="vertical"
-        android:layout_weight="2">
-        <Button
+        android:baselineAligned="false">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tipe 1"
-            android:onClick="onVoucherClicked"/>
-        <Button
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_gravity="center"
+                android:contentDescription="@string/voucher"
+                android:onClick="onVoucherClicked"
+                android:id="@+id/btnVoucher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/voucher" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/voucher"
+                android:textColor="@color/colorLogo"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tipe 2"
-            android:onClick="onTournamentClicked"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tipe 3"
-            android:onClick="onVoucherTipe3"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:contentDescription="@string/tournament"
+                android:id="@+id/btnTournament"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/tournament"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tournament"
+                android:textColor="@color/colorLogo"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

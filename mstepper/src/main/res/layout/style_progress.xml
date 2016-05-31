@@ -5,11 +5,6 @@
     android:layout_height="match_parent"
     android:background="#e0e0e0">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/stepPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <ViewSwitcher
         android:id="@+id/stepSwitcher"
         android:layout_width="match_parent"
@@ -95,5 +90,11 @@
             tool:text="Step 4 of 6" />
 
     </ViewSwitcher>
+
+    <com.github.fcannizzaro.materialstepper.widget.LockedViewPager
+        android:id="@+id/stepPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/stepSwitcher" />
 
 </RelativeLayout>

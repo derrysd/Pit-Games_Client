@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
+import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.R;
 import com.github.fcannizzaro.materialstepper.util.TintUtils;
 
@@ -48,10 +49,17 @@ public class BaseNavigation extends BasePager implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        if (view == mPrev)
+
+        AbstractStep step = mSteps.getCurrent();
+
+        if (view == mPrev) {
+            step.onPrevious();
             onPrevious();
-        else if (view == mNext || view == mEnd)
+        } else if (view == mNext || view == mEnd) {
+            step.onNext();
             onNext();
+        }
+
     }
 
     @Override
@@ -76,7 +84,7 @@ public class BaseNavigation extends BasePager implements View.OnClickListener {
         boolean isFirst = mSteps.current() == 0;
         mNext.setVisibility(isLast ? View.GONE : View.VISIBLE);
         mEnd.setVisibility(!isLast ? View.GONE : View.VISIBLE);
-        mPrev.setVisibility(isFirst ? View.GONE : View.VISIBLE);
+        mPrev.setVisibility(isFirst && !startPreviousButton ? View.GONE : View.VISIBLE);
         if (mSwitch.getDisplayedChild() != 0) mSwitch.setDisplayedChild(0);
     }
 }

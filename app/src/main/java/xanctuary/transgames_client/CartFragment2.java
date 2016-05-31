@@ -64,6 +64,7 @@ public class CartFragment2 extends AbstractStep {
                         .customView(R.layout.custom_dialog, wrapInScrollView)
                         .show();
 
+
                 spinnerJenis = (Spinner) materialDialog.findViewById(R.id.spinner_jenis);
                 spinnerNominal = (Spinner) materialDialog.findViewById(R.id.spinner_nominal);
                 infoHarga = (TextView) materialDialog.findViewById(R.id.info_harga);

@@ -2,9 +2,9 @@ package xanctuary.transgames_client;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -38,7 +38,6 @@ public class SplashActivity2 extends AppCompatActivity {
 //        loadResource.execute();
 
         imgLogo = (ImageView)findViewById(R.id.ImageViewLogo);
-        imgLogo.setBackgroundResource(+R.anim.logo_animation);
 
 
         imgText = (ImageView)findViewById(R.id.ImageViewText);
@@ -97,7 +96,6 @@ public class SplashActivity2 extends AppCompatActivity {
         anim.reset();
         imgText.clearAnimation();
         imgText.startAnimation(anim);
-        imgText.setBackgroundResource(+R.anim.text_animation);
         frameAnimation2 = (AnimationDrawable) imgText.getBackground();
 
         handler = new Handler();

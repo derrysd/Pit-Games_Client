@@ -37,11 +37,9 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".StartActivity" />
         <activity
-            android:name=".VoucherActivity2"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
             android:name=".VoucherActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".TournamentActivity"/>
     </application>
 
 </manifest>

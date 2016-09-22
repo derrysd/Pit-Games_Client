@@ -29,6 +29,16 @@ public class SplashActivity extends AppCompatActivity  {
     private TextView taglineText;
     private Boolean alreadyRun = false;
 
+    public static final String TAG_PREFERENCES= "App Preferences";
+    public static final String TAG_TOKEN = "Token";
+    public static final String TAG_CLIENTID = "Client ID";
+    public static final String TAG_CLIENTSECRET = "Client Secret";
+    public static final String TAG_AUTHURL = "Auth URL";
+    public static final String TAG_REVOKEURL = "Revoke URL";
+    public static final String TAG_AUTHBODY = "Auth Body";
+    public static final String TAG_REVOKEBODY = "Revoke Body";
+    public static final String TAG_CONTENTTYPE = "Content Type";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //hilangin title bar
@@ -46,7 +56,6 @@ public class SplashActivity extends AppCompatActivity  {
         revealLayout = (LinearLayout) findViewById(R.id.reveal);
         revealLayout.setVisibility(View.INVISIBLE);
         pathView = (PathView) findViewById(R.id.pathView);
-//        kenBurnsView = (KenBurnsView) findViewById(R.id.kenBurns);
 
         logoText1 = (ShimmerTextView) findViewById(R.id.teksLogokiri);
         logoText2 = (ShimmerTextView) findViewById(R.id.teksLogoTengah);
@@ -60,6 +69,7 @@ public class SplashActivity extends AppCompatActivity  {
         Typeface fontTagline = Typeface.createFromAsset(getAssets(), "fonts/simfang.ttf");
         taglineText.setTypeface(fontTagline);
 
+//        saveCredentials();
     }
 
     @Override
@@ -276,7 +286,10 @@ public class SplashActivity extends AppCompatActivity  {
 
         @Override
         public void onAnimationEnd(Animator animation) {
-            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+//            BlurDialog dialog = BlurDialog.newInstance();
+//            dialog.setCancelable(false);
+//            dialog.show(getFragmentManager(), "dialog_token");
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
         }
@@ -291,4 +304,16 @@ public class SplashActivity extends AppCompatActivity  {
 
         }
     };
+
+//    public void saveCredentials(){
+//        SharedPreferences.Editor editor = getSharedPreferences(TAG_PREFERENCES, Context.MODE_PRIVATE).edit();
+//        editor.putString(TAG_CLIENTID, "uOHK8UViIetuTCiH27aZ6ZZaA");
+//        editor.putString(TAG_CLIENTSECRET, "l9IbzrwyFUHCN9w5OT7V546y9Tiz14SN7DZznEnSLW71x6A8JS");
+//        editor.putString(TAG_AUTHURL, "https://api.twitter.com/oauth2/token");
+//        editor.putString(TAG_AUTHBODY, "grant_type=client_credentials");
+//        editor.putString(TAG_REVOKEURL, "https://api.twitter.com/oauth2/invalidate_token");
+//        editor.putString(TAG_REVOKEBODY, "access_token=");
+//        editor.putString(TAG_CONTENTTYPE, "application/x-www-form-urlencoded;charset=UTF-8");
+//        editor.apply();
+//    }
 }

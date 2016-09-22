@@ -37,14 +37,22 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-            <ImageView
-                android:layout_gravity="center"
-                android:contentDescription="@string/voucher"
-                android:onClick="onVoucherClicked"
-                android:id="@+id/btnVoucher"
+            <com.gigamole.library.ShadowLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/voucher" />
+                android:id="@+id/voucherShadow"
+                custom:sl_shadowed="false"
+                custom:sl_shadow_radius="5dp"
+                custom:sl_shadow_distance="1dp"
+                custom:sl_shadow_color="#ffffff">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/voucher"
+                    android:id="@+id/btnVoucher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/voucher" />
+            </com.gigamole.library.ShadowLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,13 +66,23 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-            <ImageView
-                android:contentDescription="@string/tournament"
-                android:id="@+id/btnTournament"
+            <com.gigamole.library.ShadowLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:src="@drawable/tournament"/>
+                android:id="@+id/tournamentShadow"
+                custom:sl_shadowed="false"
+                custom:sl_shadow_radius="5dp"
+                custom:sl_shadow_distance="1dp"
+                custom:sl_shadow_color="#ffffff">
+                <ImageView
+                    android:contentDescription="@string/tournament"
+                    android:id="@+id/btnTournament"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/tournament"/>
+            </com.gigamole.library.ShadowLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

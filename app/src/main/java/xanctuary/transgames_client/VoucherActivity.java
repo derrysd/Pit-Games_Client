@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -32,16 +32,24 @@ public class VoucherActivity extends AppCompatActivity {
     private List<TextView> titleStrip = new ArrayList<>();
     private boolean nextif = false;
     private String errorString = "no error";
+    private int currentPos = 0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voucher);
+
+        if(savedInstanceState != null){
+            currentPos = savedInstanceState.getInt("current_position");
+        }
         viewPager = (ViewPager) findViewById(R.id.stepPager);
-        pagerAdapter = new VoucherPagerAdapter(getSupportFragmentManager());
+        if(pagerAdapter == null) {
+            pagerAdapter = new VoucherPagerAdapter(getSupportFragmentManager());
+        }
         viewPager.setAdapter(pagerAdapter);
-//        viewPager.setPageTransformer(true, new ZoomOutTranformer());
+
+        viewPager.setCurrentItem(currentPos);
 
         switcher = (ViewSwitcher) findViewById(R.id.stepSwitcher);
         error = (TextView) findViewById(R.id.stepError);
@@ -80,6 +88,12 @@ public class VoucherActivity extends AppCompatActivity {
                         nextif = (boolean) args[0];
                     }
                 });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("current_position", viewPager.getCurrentItem());
+        super.onSaveInstanceState(outState);
     }
 
     private View.OnClickListener onPreviousClicked = new View.OnClickListener() {
@@ -148,7 +162,7 @@ public class VoucherActivity extends AppCompatActivity {
         }
     }
 
-    public static class VoucherPagerAdapter extends FragmentPagerAdapter {
+    public static class VoucherPagerAdapter extends FragmentStatePagerAdapter {
         private static int HALAMAN = 3;
 
 
@@ -175,4 +189,5 @@ public class VoucherActivity extends AppCompatActivity {
             }
         }
     }
+
 }

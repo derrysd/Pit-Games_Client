@@ -2,12 +2,14 @@
 <resources>
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#b71c1c</color>t
+    <color name="colorAccent">#7bffffff</color>
     <color name="colorTint">#9d00ff</color>
     <color name="colorBackground">#000000</color>
 
-    <color name="textColor">#7bffffff</color>
+    <color name="textColor">#000000</color>
     <color name="colorStepper">#9e9e9e</color>
+    <color name="colorFrame">#47bdbdbd</color>
+    <color name="colorFrameDark">#2c000000</color>
     <color name="colorLogo">#7bffffff</color>
     <color name="colorSnackBar">#F44336</color>
 
@@ -17,5 +19,8 @@
     <color name="titleStripColorUnselected">#757575</color>
     <color name="titleStripColorSelected">#fff</color>
     <color name="shadowStripColor">#fff</color>
+
+    <color name="step_error">#F44336</color>
+    <color name="step_bottom_bar_text">#757575</color>
 
 </resources>

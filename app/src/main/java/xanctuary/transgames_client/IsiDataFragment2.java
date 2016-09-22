@@ -3,6 +3,7 @@ package xanctuary.transgames_client;
 
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
+import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -15,9 +16,8 @@ import android.widget.Toast;
 
 import com.github.fcannizzaro.fastevent.EventCallback;
 import com.github.fcannizzaro.fastevent.FastEvent;
-import com.github.fcannizzaro.materialstepper.AbstractStep;
 
-public class IsiDataFragment2 extends AbstractStep {
+public class IsiDataFragment2 extends Fragment {
     private EditText inputNama, inputNomorTelp, inputEmail, inputNomorRek;
     private TextInputLayout inputLayoutNama, inputLayoutNomorTelp, inputLayoutEmail, inputLayoutNomorRek;
 
@@ -171,27 +171,14 @@ public class IsiDataFragment2 extends AbstractStep {
         }
     }
 
-    @Override
     public String name() {
         return  "Langkah " + getArguments().getInt("position", 0);
     }
 
-    @Override
-    public boolean isOptional() {
-        return false;
-    }
-
-    @Override
-    public void onPrevious() {
-
-    }
-
-    @Override
     public boolean nextIf() {
         return submitForm();
     }
 
-    @Override
     public String error() {
         return "<b>Data Tidak Lengkap!</b> <small>Isi dengan benar!</small>";
     }

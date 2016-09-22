@@ -14,6 +14,9 @@
         <item>NOMINAL VOUCHER</item>
     </string-array>
 
+    <string name="bt_previous">Kembali</string>
+    <string name="bt_continue">Lanjut</string>
+
     <string name="table_no">No.</string>
     <string name="table_barang">Barang</string>
     <string name="table_Nominal">Nominal</string>
@@ -37,4 +40,22 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi enim, vestibulum sed rhoncus vel, egestas quis velit. Mauris sed nisl faucibus, accumsan nulla eu, fermentum nulla. Donec molestie aliquet quam, fermentum suscipit augue maximus eu. Cras porttitor dolor non enim congue pretium. Donec maximus eleifend orci, et congue nibh molestie at. Aenean egestas mi vel condimentum mollis. Aliquam euismod massa vel sagittis vehicula. Donec massa quam, elementum eu malesuada vel, semper at tortor.
+
+Fusce non scelerisque turpis. Etiam ullamcorper, elit ac sagittis finibus, libero diam volutpat nisl, quis egestas nulla est vel orci. Etiam fermentum fringilla odio, ut accumsan leo varius id. Aenean eleifend est sed justo sagittis, quis placerat leo aliquam. Etiam sed arcu tortor. Aenean cursus, purus a ultricies facilisis, eros sem elementum purus, ullamcorper aliquam metus nulla non lacus. Donec efficitur venenatis posuere. Proin fermentum id ligula ut tincidunt. Curabitur vehicula mollis nisi non ornare. Nulla facilisi. Nam quis tincidunt eros. Maecenas viverra nunc in massa malesuada tempus. Phasellus cursus leo suscipit lorem tempus tincidunt. Maecenas sem risus, blandit ac neque ac, tristique accumsan sapien. Vestibulum fermentum blandit felis iaculis lobortis.
+
+Nulla et quam sed libero mattis convallis. Proin in pretium mi. Aliquam magna eros, tincidunt vitae neque ut, consequat ultricies lacus. Ut sapien elit, consectetur rutrum fringilla id, interdum nec libero. Suspendisse nulla erat, malesuada tempor porttitor quis, fermentum et massa. Etiam pharetra vitae massa sed luctus. Phasellus convallis eleifend faucibus. Donec sodales dignissim metus ac rutrum. Maecenas tincidunt varius enim nec blandit. Ut in lacus neque.
+
+Fusce gravida feugiat lectus, et pharetra lacus volutpat quis. Vestibulum nec leo vitae arcu interdum condimentum vitae a diam. Donec nec sollicitudin massa. In sit amet purus aliquam, rutrum dui in, bibendum felis. Duis placerat purus a turpis rutrum lobortis. Sed porta, elit a semper maximus, lectus ipsum interdum diam, sit amet aliquam lectus sapien quis sapien. Nullam vestibulum ullamcorper sapien, vitae finibus quam lacinia eu. Suspendisse placerat porta nisi, et elementum tellus ornare blandit. Vivamus ac arcu volutpat, ultricies diam sed, vehicula nisl. Sed placerat nulla ac dui fringilla, et lacinia magna pellentesque. Donec lectus lorem, pellentesque in consequat ac, dictum et sem.
+
+Pellentesque at semper est. Praesent nunc nisl, dictum vitae iaculis ac, pulvinar a enim. Duis at gravida lacus. Quisque pretium condimentum ligula, sodales aliquam enim mattis eget. Pellentesque eu ornare nulla. Nunc ultrices semper auctor. Donec fermentum est eu nulla aliquam tincidunt. Pellentesque diam elit, cursus non metus a, euismod rhoncus tortor. Nulla elementum nisi augue, vitae scelerisque nibh tincidunt ac. Pellentesque quis condimentum elit. Nullam congue risus nec pulvinar volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus massa erat, posuere ac pharetra quis, hendrerit tempor ligula.</string>
+
+    <string name="time_remaining_expired">Access Token Time Remaining: expired</string>
+    <string name="time_remaining">Access Token Time Remaining:&#160;</string>
+    <string name="invalid_authentication_request">Error - Invalid Authentication Request</string>
+    <string name="clear_cookies">Clear Cookies</string>
+    <string name="sign_in">Sign In Again</string>
+    <string name="authenticating">Authenticating&#8230;</string>
+    <string name="please_wait">Please Wait</string>
+    <string name="authParamsNotSet">Please set the authentication parameters in the authentication.xml file.</string>
 </resources>

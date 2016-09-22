@@ -2,14 +2,14 @@ package xanctuary.transgames_client;
 
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.github.fcannizzaro.materialstepper.AbstractStep;
 
 
-public class KonfirmasiFragment2 extends AbstractStep {
+public class KonfirmasiFragment2 extends Fragment {
 
 
     public KonfirmasiFragment2() {
@@ -24,22 +24,11 @@ public class KonfirmasiFragment2 extends AbstractStep {
         return inflater.inflate(R.layout.fragment_konfirmasi2, container, false);
     }
 
-    @Override
     public String name() {
         return  "Langkah " + getArguments().getInt("position", 0);
     }
 
-    @Override
-    public boolean isOptional() {
-        return false;
-    }
 
-    @Override
-    public void onPrevious() {
-
-    }
-
-    @Override
     public String error() {
         return "<b>Tidak Bisa Kembali!</b> <small> Silahkan tekan complete</small>";
     }

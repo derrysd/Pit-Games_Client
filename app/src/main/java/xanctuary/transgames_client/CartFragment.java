@@ -2,7 +2,6 @@ package xanctuary.transgames_client;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -12,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -40,9 +40,6 @@ public class CartFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
 
-        FloatingActionButton tambah = (FloatingActionButton) view.findViewById(R.id.tambah);
-        tableLayout = (TableLayout) view.findViewById(R.id.table_layout);
-
         FastEvent.on("cartFragment")
                 .onUi(getActivity())
                 .execute(new EventCallback() {
@@ -52,6 +49,8 @@ public class CartFragment extends Fragment {
                     }
                 });
 
+        ImageButton tambah = (ImageButton) view.findViewById(R.id.tambah);
+        tableLayout = (TableLayout) view.findViewById(R.id.table_layout);
         tambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {

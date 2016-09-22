@@ -2,8 +2,8 @@ package xanctuary.transgames_client;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -18,12 +19,11 @@ import android.widget.TextView;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
-public class CartFragment2 extends AbstractStep {
+public class CartFragment2 extends Fragment {
     TableLayout tableLayout;
     String price = "";
 
@@ -37,7 +37,7 @@ public class CartFragment2 extends AbstractStep {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cart2, container, false);
 
-        FloatingActionButton tambah = (FloatingActionButton) view.findViewById(R.id.tambah);
+        ImageButton tambah = (ImageButton) view.findViewById(R.id.tambah);
         tableLayout = (TableLayout) view.findViewById(R.id.table_layout);
 
         tambah.setOnClickListener(new View.OnClickListener() {
@@ -186,32 +186,14 @@ public class CartFragment2 extends AbstractStep {
         return view;
     }
 
-    @Override
-    public boolean isOptional() {
-        return false;
-    }
-
-    @Override
-    public void onPrevious() {
-
-    }
-
-    @Override
-    public String optional() {
-        return "Pilih Voucher & Pesan";
-    }
-
-    @Override
     public String name() {
         return "Langkah " + getArguments().getInt("position", 0);
     }
 
-    @Override
     public boolean nextIf() {
         return tableLayout.getChildCount() > 1;
     }
 
-    @Override
     public String error() {
         return  "<b>Keranjang Kosong!</b> <small> Klik Button Tambah!</small>";
     }
